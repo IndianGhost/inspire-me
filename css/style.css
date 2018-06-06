@@ -1,0 +1,34 @@
+html, body {
+    background-color: #fafafa;
+    color: #424242;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.content {
+    text-align: center;
+}
+
+.quote {
+    font-size: 36px;
+    padding: 20px;
+}
+.author{
+    color: #636b6f;
+}
