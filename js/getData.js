@@ -1,15 +1,18 @@
-function rand(min, max)
-{
-    return Math.floor(Math.random() * (max - min + 1) + min);
+import { quotes } from "./quotes.js";
+
+const generateRandomValueBetween = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+const generateRandomQuote = () => {
+    let randomIndex = generateRandomValueBetween(0, quotes.length);
+    let quote = quotes[randomIndex]['quoteText'];
+    let author = quotes[randomIndex]['quoteAuthor'];
+
+    document.getElementById("js-cite").innerText = quote;
+    if (author) {
+        document.getElementById("js-author").innerText = author;
+    }
 }
-$(document).ready(function(){
-    $.getJSON("js/quotes.json", function(quotes){
-        var rand_id = rand(0, quotes.length);
-        var quote   = quotes[rand_id]['quoteText'];
-        var author  = quotes[rand_id]['quoteAuthor'];
-        $('.js-cite').text(quote);
-        if(author){
-            $('.js-author').text('-'+author+'-');
-        }
-    });
-});
+
+document.getElementById("js-generate-btn").onclick = generateRandomQuote;
+
+generateRandomQuote();
